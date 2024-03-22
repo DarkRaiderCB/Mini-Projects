@@ -22,6 +22,6 @@ Contributions through pull requests are welcome! Before submitting a pull reques
 1. Fork the repository to your GitHub account.
 2. Clone the forked repository to your local machine.
 3. Create a new branch for your contribution.
-4. 4. Make your changes and commit them.
+4. Make your changes and commit them.
 5. Push to the branch.
 6. Submit a pull request to the `main` branch of the original repository.
