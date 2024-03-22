@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CV Format 2</title>
+  <style>
+  
+    #name {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    #info {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 50px;
+    }
+    
+    .skills {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 50px;
+    }
+    
+    .container {
+      margin-left: 20px;
+    }
+
+    #col1 {
+      float: left;
+      width: 40%;
+      text-align: left;
+      background-color: #35824E;
+      color: white;
+      height: 100%;
+    }
+
+    #col2 {
+      float: right;
+      width: 59%;
+      text-align: left;
+      height: 100%;
+      padding-bottom: 200px;
+    }
+
+    .skills {
+      margin-bottom: 50px;
+    }
+    .head_box{
+    height: 100vh;
+    padding-bottom : 100px;
+    }
+
+    body {
+      margin-left: 25%;
+      margin-top: 5%;
+      height: 150%;
+      width: 40%;
+    }
+    
+  </style>
+</head>
+<body>
+<div class = "head_box">
+  <div id="col1">
+    <h1 id="name"></h1>
+    <div id="info">
+    	<p id="fname"></p>
+        <p id="dob"></p>
+        <p id="phone"> </p>
+        <p id="mail"> </p>
+        <p id="language"> </p>
+        <p id ="Linkd"></p>
+        <p id ="pata"> </p>
+    </div>
+
+   <div class="container">
+        <h2 id="skill">Skills</h2>
+    </div>
+    <div class="skills">
+        <ul>
+            <li id="prgm"> </li>
+            <li id="db"></li>
+            <li id="fm"></li>
+            <li id="os"></li>
+        </ul>
+    </div>
+   </div>
+
+  <div id="col2">
+     <div class="container">
+        <h2 id="eduDetails">Educational details</h2>
+        <div class="eduinfo">
+            <p id="cname_yr_b"> </p>
+            <p id = "cpi"> </p>
+            <br>
+            
+            <p id = "school"> </p>
+            <p id = "percent"> </p>
+            <br>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 id="prjt">Project Undertaken</h2>
+    </div>
+    <div>
+        <p id="projects" style="margin: 15px"> </p>
+    </div>
+
+    <div class="container">
+        <h2 id="ac">Achievements and Certification</h2>
+    </div>
+    <p id="a_c" style="margin: 15px"> </p>
+  </div>
+ </div>
+ 
+ <div> 
+   <button style=" align-item :center; background-color: cyan; float: right" onclick="dnld()">Download as PDF</button>
+   <button style="background-color: cyan" onclick="dnld()"><a id = "xmlink" download = "format2.xml"> Download as XML </a></button>
+   <button style="background-color: cyan" onclick="dnld()"><a id = "htlink" download = "format2.html"> Download as HTML </a></button>
+ </div>
+      <script>
+        const qStr = window.location.search;
+        const urlPars = new URLSearchParams(qStr);
+
+        const name = urlPars.get('name');
+        const DOB = urlPars.get('dob');
+        const fname = urlPars.get('fname');
+        const Email = urlPars.get('mail');
+        const phone = urlPars.get('mob');
+
+        let name2 = document.querySelector('#name');
+        let DOB2 = document.querySelector('#dob');
+        let phone2 = document.querySelector('#phone');
+        let email2 = document.querySelector('#mail');
+        let father = document.querySelector('#fname');
+
+        if(name != '') { 
+            name2.innerHTML = `<p>${name}</p>`;
+        }
+
+        if(DOB != '') { 
+            DOB2.innerHTML = `<p> Date Of Birth: ${DOB}</p>`;
+        }
+
+        if(fname != '') {
+            father.innerHTML = `<p>Father Name: ${fname}</p>`;
+        }
+
+        if(Email != '') {
+            email2.innerHTML = `<p>Email: ${Email}</p>`;
+        }
+
+        if(phone != '') {
+            phone2.innerHTML = `<p>Phone Number: ${phone}</p>`;
+        }
+
+    const language = urlPars.get('lang');
+    let language2 = document.querySelector('#language');
+
+    if (language != '') {
+        language2.innerHTML = `<p>Languages known: ${language}</p>`;
+    }
+
+    const linkedin = urlPars.get('linkedin');
+    let linkedinId = document.querySelector('#Linkd');
+
+    if (linkedin != '') {
+        linkedinId.innerHTML = `<p>LinkedIn: ${linkedin}</p>`;
+    }
+
+    const Address = urlPars.get('pata');
+    let AddressId = document.querySelector('#pata');
+    if (Address != '') {
+        AddressId.innerHTML = `<p >Permanent Address: ${Address}</p>`;
+    }
+
+    const clg = urlPars.get('grad');
+    let clg2 = document.querySelector('#cname_yr_b');
+    if (clg != '') {
+        clg2.innerHTML = `<p>Graduation Field, Duration and Institute:   ${clg} </p>`;
+    }
+
+    const cpi = urlPars.get('cpi');
+    let cpiId = document.querySelector('#cpi');
+    if (cpi != '') {
+        cpiId.innerHTML = `<p>CPI: ${cpi}</p>`;
+    }
+
+    const schoolName = urlPars.get('lmc');
+    let schoolNameId = document.querySelector('#school');
+    if (schoolName != '') {
+        schoolNameId.innerHTML = `<p>School name: ${schoolName} </p>`;
+    }
+
+    const Cgpa12 = urlPars.get('c12p');
+    let Cgpa12Id = document.querySelector('#percent');
+    if (Cgpa12 != '') {
+        Cgpa12Id.innerHTML = `<p>Percentage 12th and Year: ${Cgpa12} </p>`;
+    }
+
+    const programmingLanguage = urlPars.get('pglang');
+    let programmingLanguageId = document.querySelector('#prgm');
+    if (programmingLanguage != '') {
+        programmingLanguageId.innerHTML = `<p>Programming language: ${programmingLanguage}</p>`;
+    }
+
+    const database = urlPars.get('db');
+    let databaseId = document.querySelector('#db');
+    if (database != '') {
+        databaseId.innerHTML = `<p>Database Management Tools: ${database}</p>`;
+    }
+
+    const frameworks = urlPars.get('frm');
+    let frameworksId = document.querySelector('#fm');
+    if (frameworks != '') {
+        frameworksId.innerHTML = `<p>Frameworks/Libraries: ${frameworks}</p>`;
+    }
+
+    const operatingSystem = urlPars.get('os');
+    let operatingSystemId = document.querySelector('#os');
+    if (operatingSystem != '') {
+        operatingSystemId.innerHTML = `<p>Operating System: ${operatingSystem}</p>`;
+    }
+
+    const projects = urlPars.get('project');
+    let projectsId = document.querySelector('#projects');
+    if (projects != '') {
+        projectsId.innerHTML = `<p>${projects}</p>`;
+    }
+
+    const achievements = urlPars.get('ach');
+    let achievementsId = document.querySelector('#a_c');
+    if (achievements != '') {
+        achievementsId.innerHTML = `<p>${achievements}</p>`;
+    }
+
+    function dnld() {
+        let btn = document.querySelector('button');
+        btn.innerHTML = '';
+        window.print();
+    }
+    
+    let xcode = `<?xml version="1.0" encoding="UTF-8" ?>
+<cv>
+    <h1 id="name">${name}</h1>
+    <div class="container">
+      <h2 id="pd">Personal details</h2>
+    </div>
+    <hr/>
+    <div id="info">
+      <p id="dob">${DOB}</p>
+      <p id="fname">${fname}</p>
+      <p id="phone">${phone}</p>
+      <p id="mail">${Email}</p>
+      <p id="language">${language}</p>
+      <p id="Linkd">${linkedin}</p>
+      <p id="pata">${Address}</p>
+    </div>
+
+    <div class="education">
+      <h2 id="eduDetails">Educational details</h2>
+      <hr/>
+      <div class="eduinfo">
+        <p id="cname_yr_b">${clg}</p>
+        <p id="cpi">${cpi}</p>
+        <br/>
+
+        <p id="school">${schoolName}</p>
+        <p id="percent">${Cgpa12}</p>
+        <br/>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 id="skill">Skills</h2>
+    </div>
+    <hr/>
+
+    <div class="skills">
+      <ul>
+        <li id="prgm"> ${programmingLanguage}</li>
+        <li id="db">${database}</li>
+        <li id="fm">${frameworks}</li>
+        <li id="os">${operatingSystem}</li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <h2 id="prjt">Project Undertaken</h2>
+    </div>
+    <hr/>
+    <div>
+      <p id="projects" style="margin: 15px">${projects}</p>
+    </div>
+
+    <div class="container">
+      <h2 id="ac">Achievements and Certification</h2>
+    </div>
+    <hr/>
+    <p id="a_c" style="margin: 15px">${achievements}</p>
+    <center>
+      <button style="background-color: cyan" onclick="dnld()">Download as PDF</button>
+    </center>
+</cv>`
+    
+    const xmlfile = document.getElementById("xmlink");
+    const blob1 = new Blob([xcode], {type: "text/xml"});
+    xmlfile.href = URL.createObjectURL(blob1);
+    
+    let hcode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CV Format 2</title>
+  <style>
+  
+    #name {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    #info {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 50px;
+    }
+    
+    .skills {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 50px;
+    }
+    
+    .container {
+      margin-left: 20px;
+    }
+
+    #col1 {
+      float: left;
+      width: 40%;
+      text-align: left;
+      background-color: #35824E;
+      color: white;
+      height: 100%;
+    }
+
+    #col2 {
+      float: right;
+      width: 59%;
+      text-align: left;
+      height: 100%;
+      padding-bottom: 200px;
+    }
+
+    .skills {
+      margin-bottom: 50px;
+    }
+    .head_box{
+    height: 100vh;
+    padding-bottom : 100px;
+    }
+
+    body {
+      margin-left: 25%;
+      margin-top: 5%;
+      height: 150%;
+      width: 40%;
+    }
+    
+  </style>
+</head>
+
+<body>
+<div class = "head_box">
+  <div id="col1">
+    <h1 id="name">${name}</h1>
+    <div id="info">
+    	<p id="fname">${fname}</p>
+        <p id="dob">${DOB}</p>
+        <p id="phone">${phone}</p>
+        <p id="mail"> ${Email}</p>
+        <p id="language"> ${language}</p>
+        <p id ="Linkd">${linkedin}</p>
+        <p id ="pata"> ${Address}</p>
+    </div>
+
+   <div class="container">
+        <h2 id="skill">Skills</h2>
+    </div>
+    <div class="skills">
+        <ul>
+            <li id="prgm">${programmingLanguage} </li>
+            <li id="db">${database}</li>
+            <li id="fm">${frameworks}</li>
+            <li id="os">${operatingSystem}</li>
+        </ul>
+    </div>
+   </div>
+
+  <div id="col2">
+     <div class="container">
+        <h2 id="eduDetails">Educational details</h2>
+        <div class="eduinfo">
+            <p id="cname_yr_b">${clg} </p>
+            <p id = "cpi"> ${cpi}</p>
+            <br>
+            
+            <p id = "school"> ${schoolName}</p>
+            <p id = "percent">${Cgpa12} </p>
+            <br>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 id="prjt">Project Undertaken</h2>
+    </div>
+    <div>
+        <p id="projects" style="margin: 15px">${projects} </p>
+    </div>
+
+    <div class="container">
+        <h2 id="ac">Achievements and Certification</h2>
+    </div>
+    <p id="a_c" style="margin: 15px"> ${achievements}</p>
+  </div>
+ </div>
+    </body>
+</html>`
+
+const htmlfile = document.getElementById("htlink");
+const blob2 = new Blob([hcode], {type: "text/html"});
+htmlfile.href = URL.createObjectURL(blob2);
+    
+</script>
+</body>
+</html>

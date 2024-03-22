@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GenCV</title>
+    
+    <style>
+        body {
+            width: 50%;
+            margin-left: 25%;
+        }
+        
+        input {
+            width: 100%;
+        }
+        
+        input[type="submit"] {
+            width: auto;
+            background-color: #7FFF00;
+            font-size: 16px;
+        }
+        
+        #headbox {
+            border: 2px solid;
+            margin-bottom: 5px;
+            border-radius: 20px;
+            background-color: aquamarine;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        #formcontent {
+            border: 2px solid;
+            border-radius: 20px;
+            background-color: cyan;
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+    </style>
+    
+    <script>
+        function func(value) {
+            let k = document.querySelector('form');
+            k.action = value + ".html";
+        }
+    </script>
+</head>
+<body>
+    <div id="headbox">
+        <h1 style="text-align:center"> CV Generator </h1>
+        <hr>
+        <center>
+            <p> Fill in the details and choose a format to generate your own CV! </p>
+        </center>
+    </div>
+
+    <div id="formcontent">
+        <form method="get">
+            <br> <br>
+            Name: <br><br>
+            <input type="text" id="name" name="name" placeholder="John Karp"><br><br>
+            Father's Name: <br><br>
+            <input type="text" id="fname" name="fname" placeholder="John Karp Sr."><br><br>
+            Mobile No: <br><br>
+            <input type="tel" id="mob" name="mob" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"><br><br>
+            Email: <br><br>
+            <input type="email" id="mail" name="mail" placeholder="john@gmail.com"><br><br>
+            Date Of Birth: <br><br>
+            <input type="text" id="dob" name="dob" placeholder="24/11/2003"><br><br>
+            Languages: <br><br> 
+            <input type="text" id="lang" name="lang" placeholder="English, Hindi, Sanskrit, etc."><br><br>
+            Linked In ID: <br><br>
+            <input type="text" id="linkedin" name="linkedin" placeholder="John Karp"><br><br>
+            Permanent Address: <br><br>
+            <input type ="text" id="pata" name="pata" placeholder="Lucknow, Uttar Pradesh - 226023"><br><br>
+            <hr> <br> <br>
+            Graduation Field, Duration and Institute: <br><br>
+            <input type="text" id="grad" name="grad" placeholder="B. Tech. (2022-26), IIIT Manipur"><br><br>
+            CPI: <br><br>
+            <input type="text" id="cpi" name="cpi" placeholder="8.5"><br><br>
+            Institute (Class 12th): <br><br>
+            <input type="text" id="lmc" name="lmc" placeholder="City Montessori School"><br><br>
+            Class 12th Percentage: <br><br>
+            <input type="text" id="c12p" name="c12p" placeholder="80% (2020)"> <br><br>
+            <hr> <br> <br>
+            Programming Languages: <br><br>
+            <input type="text" id="pglang" name="pglang" placeholder="C, Java, etc."><br><br>
+            Database Skills: <br><br>
+            <input type="text" id="db" name="db" placeholder="MySQL, MariaDB, MongoDB, etc."><br><br>
+            Frameworks/Libraries: <br><br>
+            <input type="text" id="frm" name="frm" placeholder="React, Django, etc."><br><br>
+            OS worked with: <br><br>
+            <input type="text" id="os" name="os" placeholder="MS-DOS, Windows, etc."><br><br>
+            Projects: <br><br>  
+            <textarea id="project" name="project" placeholder="Enter Your Project Details" style="width:100%"></textarea> <br><br>
+            Achievements & Certifications: <br><br>  
+            <textarea id="ach" name="ach" placeholder="Your Achievements" style="width:100%"></textarea> <br><br>
+            
+            Click to Generate: <br><br>
+            <input type="submit" id="submit1" name="submit1" style="float: left" value="Format_1" onclick="func(value)">
+            <input type="submit" id="submit2" name="submit2" style="float: right" value="Format_2" onclick="func(value)">
+            <br> <br>
+        </form>
+    </div>
+</body>
+</html>
+
