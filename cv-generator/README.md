@@ -5,8 +5,8 @@ A web-based application designed to help users generate their Curriculum Vitae (
 ## Files Structure
 
 - **index.html**: Contains the input form for user details and format selection.
-- **format1.html**: Defines the structure and styling for the first CV format.
-- **format2.html**: Defines the structure and styling for the second CV format.
+- **Format_1.html**: Defines the structure and styling for the first CV format.
+- **Format_2.html**: Defines the structure and styling for the second CV format.
 
 ## Features
 
