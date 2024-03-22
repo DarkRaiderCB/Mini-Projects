@@ -30,15 +30,3 @@ This script generates secure passwords with a combination of letters, symbols, a
 ### 4. Password Display
 
 - The generated password is displayed to the user.
-
-## Example
-
-`------SecureZ Password Generator!------`
-
-`How many letters would you like in your password?: 8`
-
-`How many symbols would you like?: 2`
-
-`How many numbers would you like?: 3`
-
-`Your password: 4fG$2p!3o6W`
