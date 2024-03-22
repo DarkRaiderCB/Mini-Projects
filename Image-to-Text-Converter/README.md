@@ -2,6 +2,7 @@
 
 This script performs Optical Character Recognition (OCR) on an image using the EasyOCR library.
 It detects text in the image, overlays bounding boxes and text labels on the image, saves the extracted text to a text file, and displays both the original image and the image with text detection.
+Runs on CPU.
 
 ## Dependencies
 
